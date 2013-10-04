@@ -24,9 +24,12 @@ import base64, gzip
 def downloadSubs(Parameters):
 
     #Assign/allocate object and get token after logging in with credentials from the Parameters object
+
     opensubs = OpenSubtitles()
     token = opensubs.login(Parameters.username, Parameters.password)
-
+    if token is None:
+        print '\n*** Login failed! ***\n'
+        sys.exit()
     #Get hash and size of file from Parameters object
     f = File(os.path.join(Parameters.path, Parameters.video))
     print '\tPath: %s' % Parameters.path
@@ -63,9 +66,10 @@ def downloadSubs(Parameters):
         os.remove(gz_file)
 
     else:
-        print 'No match found for file!'
+        print '*** No match found for file! ***'
 
 
+#Cookie-cutter yes/no prompt function
 def query_yes_no(question, default="yes"):
     """Ask a yes/no question via raw_input() and return their answer.
         
@@ -99,8 +103,7 @@ def query_yes_no(question, default="yes"):
                              "(or 'y' or 'n').\n")
 
 
-#Set Parameters object parameters for login info and movie details
-
+#Set Parameters object for login info and movie details
 class Parameters(object):
     username = sys.argv[2]
     password = sys.argv[3]
@@ -125,7 +128,7 @@ if os.path.exists(fn):
         for stuff in types:
             files_grabbed.extend(glob.glob(stuff))
             if files_grabbed == []:
-                print 'No matching files found in folder! Supported formats are: %s' % (types,)
+                print '*** No matching files found in folder! Supported formats are: %s ***' % (types,)
                 sys.exit()              #Exit if no matching files are found
     
         for files in files_grabbed:
@@ -154,7 +157,7 @@ if os.path.exists(fn):
 
 #If path doesn't exist (maybe also doesn't have permission, need to check)
 else:
-    print 'Invalid path/permissions failure. Please enter the full path to the video file'
+    print '*** Invalid path/permissions failure. Please enter the full path to the video file ***'
 
 
 
