@@ -1,3 +1,13 @@
-This file will be available soon.
+Note: This is my self-created project to help me learn to program.
 
-Syntax:    $ python getsubs.py [Path to file] [Path to folder]
+This script is designed to connect to opensubtitles.org via a Python wrapper with the given username/password, search for subtitles for the given video file (using hash/file size), then downloading the subtitle file into the same directory as the original video file.
+
+Why: I like to watch movies and TV shows with subtitles. I noticed that a lot of my videos did not have subtitles embedded in the files. I also couldn't find a good automated solution that already existed (how original of me, huh?)
+
+The first argument is the path to the file or folder you would like to get subtitles for. Specifying a folder will prompt the user for confirmation before performing a batch download
+
+The second and third arguments are your opensubtitles.org username/password (required for API usage)
+
+
+Usage:    $ python getsubs.py [file | folder] [username] [password]
+
