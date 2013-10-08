@@ -28,7 +28,7 @@ def downloadSubs(Parameters):
     opensubs = OpenSubtitles()
     token = opensubs.login(Parameters.username, Parameters.password)
     if token is None:
-        print '\n*** Login failed! ***\n'
+        print ('\n*** Login failed! ***\n')
         sys.exit()
     #Get hash and size of file from Parameters object
     f = File(os.path.join(Parameters.path, Parameters.video))
