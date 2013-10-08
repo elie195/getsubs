@@ -1,6 +1,6 @@
-Note: This is a project that I started myself in order to help me learn to program.
+Note: This is a project that I started myself in order to help me learn to program. The script requires the opensubs Python wrapper for the OpenSubtitles API. It is included in this project since it has been slightly modified to include support for the "download" API call. This modified version should be installed.
 
-This script is designed to connect to opensubtitles.org via a Python wrapper with the given username/password, search for subtitles for the given video file (using hash/file size), then downloading the subtitle file into the same directory as the original video file.
+About: This script is designed to connect to opensubtitles.org via a Python wrapper with the given username/password, search for subtitles for the given video file (using hash/file size), then downloading the subtitle file into the same directory as the original video file.
 
 Why: I like to watch movies and TV shows with subtitles. I noticed that a lot of my videos did not have subtitles embedded in the files. I also couldn't find a good automated solution that already existed (how original of me, huh?)
 
